@@ -1,16 +1,16 @@
 "use client";
 
-import classes from "./Modal.module.css";
 import ReactDOM from "react-dom";
+import styles from "../../styles/Modal.module.css";
 
 const Backdrop = (props) => {
-  return <div className={classes.backdrop} onClick={props.onCloseClick} />;
+  return <div className={styles.backdrop} onClick={props.onCloseClick} />;
 };
 
 const ModalOverlay = (props) => {
   return (
-    <div className={classes.modal}>
-      <div className={classes.content}>{props.children}</div>
+    <div className={styles.modal}>
+      <div>{props.children}</div>
     </div>
   );
 };

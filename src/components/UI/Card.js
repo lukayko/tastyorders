@@ -1,7 +1,9 @@
-import classes from './Card.module.css';
+"use client";
+
+import styles from "../../styles/Card.module.css";
 
 const Card = (props) => {
-  return <div className={classes.card}>{props.children}</div>;
+  return <div className={styles.card}>{props.children}</div>;
 };
 
 export default Card;

@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef, useState } from "react";
-import classes from "./CheckoutForm.module.css";
+import styles from "../../styles/CheckoutForm.module.css";
 
 const CheckoutForm = (props) => {
   const nameInputRef = useRef();
@@ -73,20 +73,20 @@ const CheckoutForm = (props) => {
   };
 
   const nameControlCSS = isInputValid.name
-    ? classes.control
-    : classes.control + classes.invalid;
+    ? styles.control
+    : styles.control + styles.invalid;
   const phoneControlCSS = isInputValid.phone
-    ? classes.control
-    : classes.control + classes.invalid;
+    ? styles.control
+    : styles.control + styles.invalid;
   const cityControlCSS = isInputValid.city
-    ? classes.control
-    : classes.control + classes.invalid;
+    ? styles.control
+    : styles.control + styles.invalid;
   const streetControlCSS = isInputValid.street
-    ? classes.control
-    : classes.control + classes.invalid;
+    ? styles.control
+    : styles.control + styles.invalid;
   const postalcodeControlCSS = isInputValid.postalcode
-    ? classes.control
-    : classes.control + classes.invalid;
+    ? styles.control
+    : styles.control + styles.invalid;
 
   return (
     <form onSubmit={confirmHandler}>

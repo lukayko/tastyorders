@@ -1,0 +1,28 @@
+.meals {
+  max-width: 60rem;
+  width: 90%;
+  margin: 2rem auto;
+  animation: meals-appear 1s ease-out forwards;
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__loading {
+    text-align: center;
+    font-size: 2rem;
+    margin: 3rem;
+    color: white;
+    font-weight: bold;
+  }
+
+  &__error {
+    text-align: center;
+    font-size: 2rem;
+    margin: 3rem;
+    color: white;
+    font-weight: bold;
+  }
+}

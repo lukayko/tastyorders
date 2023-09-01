@@ -1,5 +1,7 @@
-import MealsSummary from './MealsSummary';
-import AvailableMeals from './AvailableMeals';
+"use client";
+
+import MealsSummary from "./MealsSummary";
+import AvailableMeals from "./AvailableMeals";
 
 const Meals = () => {
   return (

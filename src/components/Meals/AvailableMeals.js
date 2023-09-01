@@ -1,9 +1,9 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import classes from "./AvailableMeals.module.css";
 import Card from "../UI/Card";
 import MealItem from "./MealItem";
+import styles from "../../styles/AvailableMeals.module.css";
 
 const AvailableMeals = () => {
   const [isError, setIsError] = useState(null);
@@ -49,7 +49,7 @@ const AvailableMeals = () => {
 
   if (isLoading) {
     return (
-      <section className={classes.loading}>
+      <section className={styles.meals__loading}>
         <p>Loading, please wait...</p>
       </section>
     );
@@ -57,7 +57,7 @@ const AvailableMeals = () => {
 
   if (isError) {
     return (
-      <section className={classes.error}>
+      <section className={styles.meals__error}>
         <p>{isError}</p>
       </section>
     );
@@ -74,7 +74,7 @@ const AvailableMeals = () => {
   ));
 
   return (
-    <section className={classes.meals}>
+    <section className={styles.meals}>
       <Card>
         <ul>{mealsList}</ul>
       </Card>

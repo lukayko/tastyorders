@@ -2,11 +2,11 @@
 
 import { Fragment, useContext, useState } from "react";
 import CartItem from "./CartItem";
-import classes from "./Cart.module.css";
 import CheckoutForm from "./CheckoutForm";
 import Modal from "../UI/Modal";
 import { AiOutlineClose } from "react-icons/ai";
 import CartContext from "../../store/cart-context";
+import styles from "../../styles/Cart.module.css";
 
 const Cart = (props) => {
   const cartCtx = useContext(CartContext);
@@ -61,9 +61,12 @@ const Cart = (props) => {
   const formattedTotalAmount = `${cartCtx.totalAmount.toFixed(2)}€`;
   const cartContainItems = cartCtx.items.length > 0;
   const orderButton = (
-    <div className={classes.actions}>
+    <div>
       {cartContainItems && (
-        <button className={classes.button} onClick={orderClickHandler}>
+        <button
+          className={styles["cart__order-button"]}
+          onClick={orderClickHandler}
+        >
           Order
         </button>
       )}
@@ -72,18 +75,21 @@ const Cart = (props) => {
 
   const modalContent = (
     <Fragment>
-      <button className={classes["close-button"]} onClick={props.onCloseClick}>
+      <button
+        className={styles["cart__close-button"]}
+        onClick={props.onCloseClick}
+      >
         Close
-        <AiOutlineClose className={classes["x-icon"]} />
+        <AiOutlineClose className={styles["cart__close-icon"]} />
       </button>
       <h2>Order summary</h2>
-      <div className={classes["order-items"]}>
+      <div className={styles["cart__items-description"]}>
         <p>Meal</p>
         <p>Price</p>
         <p>Quantity</p>
       </div>
-      <ul className={classes["cart-items"]}>{cartItems}</ul>
-      <div className={classes.total}>
+      <ul className={styles["cart__items"]}>{cartItems}</ul>
+      <div className={styles.cart__total}>
         <span>Total Amount</span>
         <span>{formattedTotalAmount}</span>
       </div>
@@ -100,9 +106,14 @@ const Cart = (props) => {
   const isSubmittingModalContent = <p>Sending order data...</p>;
   const isOrderSentModalContent = (
     <Fragment>
-      <p>Order sent successfully!</p>
-      <button className={classes.button} onClick={props.onCloseClick}>
+      <h2>Thank You!</h2>
+      <p>We have received your order and will begin working on it shortly.</p>
+      <button
+        className={styles["cart__close-button"]}
+        onClick={props.onCloseClick}
+      >
         Close
+        <AiOutlineClose className={styles["cart__close-icon"]} />
       </button>
     </Fragment>
   );

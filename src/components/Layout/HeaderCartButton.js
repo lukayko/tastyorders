@@ -2,8 +2,8 @@
 
 import { useContext } from "react";
 import { PiBasket } from "react-icons/pi";
-import classes from "./HeaderCartButton.module.css";
 import CartContext from "../../store/cart-context";
+import styles from "../../styles/HeaderCartBtn.module.css";
 
 const HeaderCartButton = (props) => {
   const cartCtx = useContext(CartContext);
@@ -13,9 +13,9 @@ const HeaderCartButton = (props) => {
   }, 0);
 
   return (
-    <button className={classes.button} onClick={props.onCartClick}>
-      <PiBasket className={classes.icon} />
-      <span className={classes.badge}>{numOfCartItems}</span>
+    <button className={styles["cart-button"]} onClick={props.onCartClick}>
+      <PiBasket className={styles["cart-button__icon"]} />
+      <span className={styles["cart-button__badge"]}>{numOfCartItems}</span>
     </button>
   );
 };

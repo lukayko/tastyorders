@@ -12,22 +12,23 @@
   padding: 0 10%;
   z-index: 10;
 }
-
-.heading-container {
+.header__logo-container {
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 0.3rem;
 }
-
-.main-image {
+.header__logo {
+  width: 3rem;
+  height: 3rem;
+}
+.header__bg-container {
   width: 100%;
   height: 35rem;
   z-index: 0;
   overflow: hidden;
 }
-
-.main-image img {
+.header__bg-container img {
   width: 110%;
   height: 100%;
   -o-object-fit: cover;

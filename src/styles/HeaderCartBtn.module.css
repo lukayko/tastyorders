@@ -1,4 +1,4 @@
-.button {
+.cart-button {
   cursor: pointer;
   font: inherit;
   border: none;
@@ -9,15 +9,13 @@
   padding: 0.5rem;
   background-color: transparent;
 }
-
-.icon {
+.cart-button__icon {
   width: 2rem;
   height: 2rem;
 }
-
-.badge {
+.cart-button__badge {
   position: absolute;
-  background-color: #f05454;
+  background-color: #f8b602;
   border-radius: 100%;
   width: 1.35rem;
   height: 1.35rem;
@@ -27,4 +25,5 @@
   display: flex;
   justify-content: center;
   font-weight: bold;
+  color: #fff;
 }/*# sourceMappingURL=HeaderCartBtn.module.css.map */

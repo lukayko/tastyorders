@@ -1,9 +1,9 @@
 "use client";
 
 import { useRef, useState, useContext } from "react";
-import classes from "./MealItem.module.css";
 import Input from "../UI/Input";
 import CartContext from "../../store/cart-context";
+import styles from "../../styles/MealItem.module.css";
 
 const MealItem = (props) => {
   const [isValid, setIsValid] = useState(true);
@@ -35,14 +35,14 @@ const MealItem = (props) => {
   };
 
   return (
-    <li className={classes.meal}>
+    <li className={styles.meal}>
       <div>
         <h3>{props.name}</h3>
-        <p className={classes.description}>{props.description}</p>
-        <p className={classes.price}>{formattedPrice}</p>
+        <p className={styles.meal__description}>{props.description}</p>
+        <p className={styles.meal__price}>{formattedPrice}</p>
       </div>
       <div>
-        <form className={classes.form} onSubmit={formSubmitHandler}>
+        <form className={styles.meal__form} onSubmit={formSubmitHandler}>
           <Input
             ref={inputRef}
             label='Quantity'
