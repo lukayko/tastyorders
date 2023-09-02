@@ -7,26 +7,43 @@
 }
 .meal h3 {
   margin: 0 0 0.25rem 0;
+  font-weight: semi-bold;
 }
 .meal__description {
   font-style: italic;
+  color: rgba(0, 0, 0, 0.5);
 }
 .meal__price {
   margin-top: 0.25rem;
   font-weight: bold;
-  color: #f05454;
   font-size: 1.25rem;
 }
-.meal__form {
-  text-align: right;
+.meal__symbol {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #f8b602;
 }
-.meal__form button {
+.meal__form {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  width: 135px;
+}
+.meal__form-cart-button {
   font: inherit;
   cursor: pointer;
-  background-color: #8a2b06;
-  border: 1px solid #8a2b06;
-  color: white;
-  padding: 0.25rem 2rem;
-  border-radius: 0.25rem;
+  background-color: #f8b602;
+  border: none;
+  font-weight: bold;
+  color: #fff;
+  padding: 0.5rem 1.5rem;
+  border-radius: 25px;
+  width: 100%;
+}
+.meal__form-wrong-input {
+  color: rgb(255, 48, 48);
+  font-size: 0.7rem;
   font-weight: bold;
 }/*# sourceMappingURL=MealItem.module.css.map */

@@ -1,21 +1,23 @@
 "use client";
 
-import { useRef, useState, useContext } from "react";
+import { useState, useContext } from "react";
 import Input from "../UI/Input";
 import CartContext from "../../store/cart-context";
 import styles from "../../styles/MealItem.module.css";
 
 const MealItem = (props) => {
   const [isValid, setIsValid] = useState(true);
-  const inputRef = useRef();
+  const [inputValue, setInputValue] = useState(1);
+  const [isWrongInput, setIsWrongInput] = useState(false);
+
   const cartCtx = useContext(CartContext);
 
-  const formattedPrice = `${props.price.toFixed(2)}€`;
+  const formattedPrice = `${props.price.toFixed(2)}`;
 
   const formSubmitHandler = (e) => {
     e.preventDefault();
 
-    const enteredAmount = +inputRef.current.value;
+    const enteredAmount = inputValue;
 
     if (enteredAmount < 1 || enteredAmount > 10) {
       setIsValid(false);
@@ -34,28 +36,50 @@ const MealItem = (props) => {
     addToCartHandler(enteredAmount);
   };
 
+  const decreaseInputValueHandler = () => {
+    if (inputValue > 1) {
+      setInputValue((prevValue) => prevValue - 1);
+    } else {
+      setInputValue(1);
+      setIsWrongInput(true);
+    }
+  };
+
+  const increaseInputValueHandler = () => {
+    if (inputValue < 10) {
+      setInputValue((prevValue) => prevValue + 1);
+    } else {
+      setInputValue(10);
+      setIsWrongInput(true);
+    }
+  };
+
   return (
     <li className={styles.meal}>
       <div>
         <h3>{props.name}</h3>
         <p className={styles.meal__description}>{props.description}</p>
-        <p className={styles.meal__price}>{formattedPrice}</p>
+        <p className={styles.meal__price}>
+          {formattedPrice}
+          <span className={styles.meal__symbol}>€</span>
+        </p>
       </div>
       <div>
         <form className={styles.meal__form} onSubmit={formSubmitHandler}>
           <Input
-            ref={inputRef}
-            label='Quantity'
-            input={{
-              id: props.id,
-              type: "number",
-              min: "1",
-              step: "1",
-              defaultValue: "1",
-            }}
+            id={props.id}
+            value={inputValue}
+            decreaseInputValueHandler={decreaseInputValueHandler}
+            increaseInputValueHandler={increaseInputValueHandler}
           />
-          <button>Add to Cart</button>
-          {!isValid && <p>Please enter valid amount (1 - 10)</p>}
+          {isWrongInput && (
+            <p className={styles["meal__form-wrong-input"]}>
+              Please enter valid amount (1 - 10)
+            </p>
+          )}
+          <button className={styles["meal__form-cart-button"]}>
+            Add to cart
+          </button>
         </form>
       </div>
     </li>

@@ -12,6 +12,7 @@
 .cart-button__icon {
   width: 2rem;
   height: 2rem;
+  fill: white;
 }
 .cart-button__badge {
   position: absolute;

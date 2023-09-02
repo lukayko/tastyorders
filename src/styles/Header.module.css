@@ -5,7 +5,6 @@
   width: 100%;
   height: 5rem;
   background-color: transparent;
-  color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -18,9 +17,13 @@
   align-items: center;
   gap: 0.3rem;
 }
+.header__logo-container h1 {
+  color: white;
+}
 .header__logo {
   width: 3rem;
   height: 3rem;
+  fill: white;
 }
 .header__bg-container {
   width: 100%;
@@ -33,6 +36,6 @@
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  transform: rotateZ(-5deg) translateY(-4rem) translateX(-1rem);
-  opacity: 0.6;
+  transform: rotateZ(-5deg) translateY(-5rem) translateX(-1.5rem);
+  filter: brightness(70%);
 }/*# sourceMappingURL=Header.module.css.map */

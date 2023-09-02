@@ -1,6 +1,6 @@
 "use client";
 
-import ReactDOM from "react-dom";
+import { createPortal } from "react-dom";
 import styles from "../../styles/Modal.module.css";
 
 const Backdrop = (props) => {
@@ -20,11 +20,11 @@ const Modal = (props) => {
 
   return (
     <>
-      {ReactDOM.createPortal(
+      {createPortal(
         <Backdrop onCloseClick={props.onCloseClick} />,
         targetElement
       )}
-      {ReactDOM.createPortal(
+      {createPortal(
         <ModalOverlay>{props.children}</ModalOverlay>,
         targetElement
       )}
