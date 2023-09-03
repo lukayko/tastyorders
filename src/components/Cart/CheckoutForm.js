@@ -100,15 +100,15 @@ const CheckoutForm = (props) => {
         <input type='text' id='phone' ref={phoneInputRef}></input>
         {!isInputValid.phone && <p>Please enter a valid phone number.</p>}
       </div>
-      <div className={cityControlCSS}>
-        <label htmlFor='city'>City</label>
-        <input type='text' id='city' ref={cityInputRef}></input>
-        {!isInputValid.city && <p>Please enter a valid city.</p>}
-      </div>
       <div className={streetControlCSS}>
         <label htmlFor='street'>Street</label>
         <input type='text' id='street' ref={streetInputRef}></input>
         {!isInputValid.street && <p>Please enter a valid street.</p>}
+      </div>
+      <div className={cityControlCSS}>
+        <label htmlFor='city'>City</label>
+        <input type='text' id='city' ref={cityInputRef}></input>
+        {!isInputValid.city && <p>Please enter a valid city.</p>}
       </div>
       <div className={postalcodeControlCSS}>
         <label htmlFor='postalcode'>Postal Code</label>

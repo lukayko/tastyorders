@@ -3,50 +3,22 @@
 .cart {
   &__wrapper {
     display: flex;
-  }
-
-  &__items-description {
-    list-style: none;
-    margin: 0;
-    padding: 1rem 0 0 0;
-    max-height: 40rem;
-    overflow: auto;
-  }
-
-  &__close-button {
-    font: inherit;
-    cursor: pointer;
-    background-color: transparent;
-    border: 2px solid $primaryFontColor;
-    padding: 0.5rem 1rem;
-    border-radius: 0.5rem;
-    margin-top: 2rem;
-    background-color: transparent;
-    color: $primaryFontColor;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 130px;
-  }
-
-  &__close-icon {
-    width: 1.25rem;
-    height: 1.25rem;
-    margin-right: 0.3rem;
-    fill: $primaryFontColor;
+    padding: 1rem;
   }
 
   &__items {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
-    font-size: 0.875rem;
-    opacity: 0.5;
+    width: 100%;
+    padding-left: 0;
+    max-height: 40vh;
+    overflow: auto;
   }
 
   &__summary {
     margin: 0;
+    color: $primaryColor;
   }
 
   &__total {
@@ -54,8 +26,41 @@
     justify-content: space-between;
     align-items: center;
     font-weight: bold;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     margin: 1rem 0;
+
+    &-symbol {
+      color: $primaryColor;
+    }
+  }
+
+  &__additional {
+    font-size: 0.8rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: -1rem;
+
+    span {
+      color: $primaryColor;
+      font-weight: bold;
+    }
+
+    p {
+      font-weight: bold;
+    }
+
+    &-text {
+      color: $tertiaryFontColor;
+    }
+  }
+
+  &__button-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2rem;
   }
 
   &__order-button {
@@ -70,5 +75,28 @@
     display: flex;
     justify-content: center;
     width: 130px;
+  }
+
+  &__close-button {
+    font: inherit;
+    cursor: pointer;
+    background-color: transparent;
+    border: 2px solid $primaryFontColor;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    background-color: transparent;
+    color: $primaryFontColor;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 130px;
+  }
+
+  &__close-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    margin-right: 0.3rem;
+    fill: $primaryFontColor;
   }
 }
