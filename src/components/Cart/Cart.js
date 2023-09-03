@@ -150,7 +150,9 @@ const Cart = (props) => {
     <Modal checkOutState={isCheckout} onCloseClick={props.onCloseClick}>
       {!isOrderSent && !isSubmitting && modalContent}
       {isSubmitting && isSubmittingModalContent}
-      {isOrderSent && !isSubmitting && <OrderSentContent />}
+      {isOrderSent && !isSubmitting && (
+        <OrderSentContent onCloseClick={props.onCloseClick} />
+      )}
     </Modal>
   );
 };

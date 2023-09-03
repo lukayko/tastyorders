@@ -1,6 +1,5 @@
 "use client";
 
-import React, { Fragment } from "react";
 import { AiOutlineClose } from "react-icons/ai";
 import styles from "../../styles/EmptyCartContent.module.css";
 

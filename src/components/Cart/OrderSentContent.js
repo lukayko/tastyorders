@@ -1,16 +1,26 @@
-const OrderSentContent = () => {
+import { MdOutlineFastfood } from "react-icons/md";
+import { AiOutlineClose } from "react-icons/ai";
+import styles from "../../styles/OrderSentContent.module.css";
+
+const OrderSentContent = (props) => {
   return (
-    <Fragment>
-      <h2>Thank You!</h2>
-      <p>We have received your order and will begin working on it shortly.</p>
+    <div className={styles.order__container}>
+      <MdOutlineFastfood className={styles["order__food-icon"]} />
+      <h2 className={styles.order__title}>
+        Bon appétit<span>!</span>
+      </h2>
+      <p>
+        Your order is in our kitchen. You will have it at your doorstep in no
+        time.
+      </p>
       <button
-        className={styles["cart__close-button"]}
+        className={styles["order__close-button"]}
         onClick={props.onCloseClick}
       >
+        <AiOutlineClose className={styles["order__close-icon"]} />
         Close
-        <AiOutlineClose className={styles["cart__close-icon"]} />
       </button>
-    </Fragment>
+    </div>
   );
 };
 

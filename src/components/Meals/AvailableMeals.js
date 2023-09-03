@@ -47,22 +47,6 @@ const AvailableMeals = () => {
     });
   }, []);
 
-  if (isLoading) {
-    return (
-      <section className={styles.meals__loading}>
-        <p>Loading, please wait...</p>
-      </section>
-    );
-  }
-
-  if (isError) {
-    return (
-      <section className={styles.meals__error}>
-        <p>{isError}</p>
-      </section>
-    );
-  }
-
   const mealsList = loadedMeals.map((meal) => (
     <MealItem
       key={meal.id}
@@ -73,13 +57,31 @@ const AvailableMeals = () => {
     />
   ));
 
-  return (
-    <section className={styles.meals}>
-      <Card>
-        <ul>{mealsList}</ul>
-      </Card>
-    </section>
-  );
+  let content;
+
+  if (isLoading) {
+    content = (
+      <section className={styles.meals__loading}>
+        <p>Loading, please wait...</p>
+      </section>
+    );
+  } else if (isError) {
+    content(
+      <section className={styles.meals__error}>
+        <p>{isError}</p>
+      </section>
+    );
+  } else {
+    content = (
+      <section className={styles.meals}>
+        <Card>
+          <ul>{mealsList}</ul>
+        </Card>
+      </section>
+    );
+  }
+
+  return <>{content}</>;
 };
 
 export default AvailableMeals;
