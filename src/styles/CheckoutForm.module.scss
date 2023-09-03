@@ -1,54 +1,111 @@
-.form {
-  margin: 1rem 0;
-  height: 19rem;
-  overflow: auto;
-}
+@import "variables";
 
-.control {
-  margin-bottom: 0.5rem;
+.checkout {
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
 
-  label {
-    font-weight: bold;
-    margin-bottom: 0.25rem;
-    display: block;
+    h2 {
+      margin: 0 0 1rem 0;
+      color: $primaryColor;
+    }
   }
 
-  input {
+  &__form-area {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+
+    // label {
+    //   font-weight: bold;
+    //   margin-bottom: 0.25rem;
+    //   font-size: 0.875rem;
+    // }
+
+    input {
+      background-color: $secondaryColor;
+      border: none;
+      padding: 1rem;
+      border-radius: 0.5rem;
+      font-size: 1rem;
+      font-weight: bold;
+    }
+
+    input:active,
+    input:focus {
+      outline-color: #333;
+    }
+
+    input::placeholder {
+      font-weight: normal;
+    }
+
+    &-invalid {
+      p {
+        font-size: 0.7rem;
+        color: rgb(255, 48, 48);
+        font-weight: bold;
+        margin: 0.3rem 0 0 0;
+      }
+
+      input {
+        background-color: $secondaryColor;
+        border: 2px solid rgb(255, 48, 48);
+        padding: 1rem;
+        border-radius: 0.5rem;
+        font-size: 1rem;
+        font-weight: bold;
+        color: rgb(255, 48, 48);
+      }
+
+      input:active,
+      input:focus {
+        outline-color: rgb(255, 48, 48);
+      }
+
+      input::placeholder {
+        font-weight: normal;
+        color: rgb(255, 48, 48);
+      }
+    }
+  }
+
+  &__button-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2rem;
+  }
+
+  &__confirm-button {
     font: inherit;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    width: 20rem;
-    max-width: 100%;
+    cursor: pointer;
+    background-color: $primaryColor;
+    border: 1px solid $primaryColor;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    color: $secondaryFontColor;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    width: 130px;
   }
-}
 
-.actions {
-  display: flex;
-  justify-content: flex-end;
-  gap: 1rem;
-}
-
-.actions button {
-  font: inherit;
-  color: #5a1a01;
-  cursor: pointer;
-  background-color: transparent;
-  border: none;
-  border-radius: 25px;
-  padding: 0.5rem 2rem;
-}
-
-.actions .submit {
-  border: 1px solid #5a1a01;
-  background-color: #5a1a01;
-  color: white;
-}
-
-.invalid label {
-  color: #ca3e51;
-}
-
-.invalid input {
-  border-color: #aa0b20;
-  background-color: #ffeff1;
+  &__back-button {
+    font: inherit;
+    cursor: pointer;
+    background-color: transparent;
+    border: 2px solid $primaryFontColor;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    background-color: transparent;
+    color: $primaryFontColor;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 130px;
+  }
 }

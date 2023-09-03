@@ -13,8 +13,8 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 640px;
-  max-height: 80vh;
+  min-width: 640px;
+  max-height: 85vh;
   background-color: white;
   padding: 2rem;
   border-radius: 14px;

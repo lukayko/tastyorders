@@ -99,7 +99,12 @@ const Cart = (props) => {
     modalContent = <EmptyCartContent onCloseClick={props.onCloseClick} />;
   } else {
     modalContent = (
-      <Fragment className={styles.cart__wrapper}>
+      <div
+        className={`styles.cart__wrapper ${
+          isCheckout ? styles.grid__wrapper : ""
+        }`}
+      >
+        {/* child 1*/}
         <div>
           <h2 className={styles.cart__summary}>Your order</h2>
           <ul className={styles.cart__items}>{cartItems}</ul>
@@ -123,25 +128,26 @@ const Cart = (props) => {
               <span className={styles["cart__total-symbol"]}>€</span>
             </span>
           </div>
+          <div className={styles["cart__button-container"]}>
+            {!isCheckout && closeButton}
+            {!isCheckout && orderButton}
+          </div>
         </div>
+        {/* child 2*/}
         {isCheckout && (
           <CheckoutForm
             onSubmitForm={submitOrderHandler}
             onGoBackClick={onGoBackClickHandler}
           />
         )}
-        <div className={styles["cart__button-container"]}>
-          {!isCheckout && closeButton}
-          {!isCheckout && orderButton}
-        </div>
-      </Fragment>
+      </div>
     );
   }
 
   const isSubmittingModalContent = <p>Sending order data...</p>;
 
   return (
-    <Modal onCloseClick={props.onCloseClick}>
+    <Modal checkOutState={isCheckout} onCloseClick={props.onCloseClick}>
       {!isOrderSent && !isSubmitting && modalContent}
       {isSubmitting && isSubmittingModalContent}
       {isOrderSent && !isSubmitting && <OrderSentContent />}

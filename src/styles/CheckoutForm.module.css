@@ -1,52 +1,94 @@
-.form {
-  margin: 1rem 0;
-  height: 19rem;
-  overflow: auto;
-}
-
-.control {
-  margin-bottom: 0.5rem;
-}
-.control label {
-  font-weight: bold;
-  margin-bottom: 0.25rem;
-  display: block;
-}
-.control input {
-  font: inherit;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  width: 20rem;
-  max-width: 100%;
-}
-
-.actions {
+.checkout__wrapper {
   display: flex;
-  justify-content: flex-end;
-  gap: 1rem;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
 }
-
-.actions button {
+.checkout__wrapper h2 {
+  margin: 0 0 1rem 0;
+  color: #f8b602;
+}
+.checkout__form-area {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+.checkout__form-area input {
+  background-color: #f5f5f5;
+  border: none;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+}
+.checkout__form-area input:active,
+.checkout__form-area input:focus {
+  outline-color: #333;
+}
+.checkout__form-area input::-moz-placeholder {
+  font-weight: normal;
+}
+.checkout__form-area input::placeholder {
+  font-weight: normal;
+}
+.checkout__form-area-invalid p {
+  font-size: 0.7rem;
+  color: rgb(255, 48, 48);
+  font-weight: bold;
+  margin: 0.3rem 0 0 0;
+}
+.checkout__form-area-invalid input {
+  background-color: #f5f5f5;
+  border: 2px solid rgb(255, 48, 48);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  color: rgb(255, 48, 48);
+}
+.checkout__form-area-invalid input:active,
+.checkout__form-area-invalid input:focus {
+  outline-color: rgb(255, 48, 48);
+}
+.checkout__form-area-invalid input::-moz-placeholder {
+  font-weight: normal;
+  color: rgb(255, 48, 48);
+}
+.checkout__form-area-invalid input::placeholder {
+  font-weight: normal;
+  color: rgb(255, 48, 48);
+}
+.checkout__button-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2rem;
+}
+.checkout__confirm-button {
   font: inherit;
-  color: #5a1a01;
+  cursor: pointer;
+  background-color: #f8b602;
+  border: 1px solid #f8b602;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  color: #fff;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  width: 130px;
+}
+.checkout__back-button {
+  font: inherit;
   cursor: pointer;
   background-color: transparent;
-  border: none;
-  border-radius: 25px;
-  padding: 0.5rem 2rem;
-}
-
-.actions .submit {
-  border: 1px solid #5a1a01;
-  background-color: #5a1a01;
-  color: white;
-}
-
-.invalid label {
-  color: #ca3e51;
-}
-
-.invalid input {
-  border-color: #aa0b20;
-  background-color: #ffeff1;
+  border: 2px solid #333;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  background-color: transparent;
+  color: #333;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 130px;
 }/*# sourceMappingURL=CheckoutForm.module.css.map */

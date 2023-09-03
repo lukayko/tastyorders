@@ -89,39 +89,97 @@ const CheckoutForm = (props) => {
     : styles.control + styles.invalid;
 
   return (
-    <form onSubmit={confirmHandler}>
-      <div className={nameControlCSS}>
-        <label htmlFor='name'>Name</label>
-        <input type='text' id='name' ref={nameInputRef}></input>
-        {!isInputValid.name && <p>Please enter a valid name.</p>}
-      </div>
-      <div className={phoneControlCSS}>
-        <label htmlFor='phone'>Phone number</label>
-        <input type='text' id='phone' ref={phoneInputRef}></input>
-        {!isInputValid.phone && <p>Please enter a valid phone number.</p>}
-      </div>
-      <div className={streetControlCSS}>
-        <label htmlFor='street'>Street</label>
-        <input type='text' id='street' ref={streetInputRef}></input>
-        {!isInputValid.street && <p>Please enter a valid street.</p>}
-      </div>
-      <div className={cityControlCSS}>
-        <label htmlFor='city'>City</label>
-        <input type='text' id='city' ref={cityInputRef}></input>
-        {!isInputValid.city && <p>Please enter a valid city.</p>}
-      </div>
-      <div className={postalcodeControlCSS}>
-        <label htmlFor='postalcode'>Postal Code</label>
-        <input type='text' id='postalcode' ref={postalcodeInputRef}></input>
-        {!isInputValid.postalcode && (
-          <p>Please enter a valid postal code (5 characters long).</p>
-        )}
-      </div>
-      <button type='button' onClick={props.onGoBackClick}>
-        Go back
-      </button>
-      <button>Confirm</button>
-    </form>
+    <div className={styles.checkout__wrapper}>
+      <h2>Contact Information</h2>
+      <form onSubmit={confirmHandler}>
+        <div
+          className={`${styles["checkout__form-area"]} ${
+            !isInputValid.name ? styles["checkout__form-area-invalid"] : ""
+          }`}
+        >
+          {/* <label htmlFor='name'>Name</label> */}
+          <input
+            type='text'
+            id='name'
+            ref={nameInputRef}
+            placeholder='Name'
+          ></input>
+          {!isInputValid.name && <p>Please enter a valid name.</p>}
+        </div>
+        <div
+          className={`${styles["checkout__form-area"]} ${
+            !isInputValid.phone ? styles["checkout__form-area-invalid"] : ""
+          }`}
+        >
+          {/* <label htmlFor='phone'>Phone number</label> */}
+          <input
+            type='text'
+            id='phone'
+            ref={phoneInputRef}
+            placeholder='Phone number'
+          ></input>
+          {!isInputValid.phone && <p>Please enter a valid phone number.</p>}
+        </div>
+        <div
+          className={`${styles["checkout__form-area"]} ${
+            !isInputValid.street ? styles["checkout__form-area-invalid"] : ""
+          }`}
+        >
+          {/* <label htmlFor='street'>Street</label> */}
+          <input
+            type='text'
+            id='street'
+            ref={streetInputRef}
+            placeholder='Street'
+          ></input>
+          {!isInputValid.street && <p>Please enter a valid street.</p>}
+        </div>
+        <div
+          className={`${styles["checkout__form-area"]} ${
+            !isInputValid.city ? styles["checkout__form-area-invalid"] : ""
+          }`}
+        >
+          {/* <label htmlFor='city'>City</label> */}
+          <input
+            type='text'
+            id='city'
+            ref={cityInputRef}
+            placeholder='City'
+          ></input>
+          {!isInputValid.city && <p>Please enter a valid city.</p>}
+        </div>
+        <div
+          className={`${styles["checkout__form-area"]} ${
+            !isInputValid.postalcode
+              ? styles["checkout__form-area-invalid"]
+              : ""
+          }`}
+        >
+          {/* <label htmlFor='postalcode'>Postal Code</label> */}
+          <input
+            type='text'
+            id='postalcode'
+            ref={postalcodeInputRef}
+            placeholder='Postal code'
+          ></input>
+          {!isInputValid.postalcode && (
+            <p>Please enter a valid postal code (5 characters long).</p>
+          )}
+        </div>
+        <div className={styles["checkout__button-container"]}>
+          <button
+            type='button'
+            onClick={props.onGoBackClick}
+            className={styles["checkout__back-button"]}
+          >
+            Go back
+          </button>
+          <button className={styles["checkout__confirm-button"]}>
+            Confirm
+          </button>
+        </div>
+      </form>
+    </div>
   );
 };
 

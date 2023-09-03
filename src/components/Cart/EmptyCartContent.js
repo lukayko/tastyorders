@@ -6,7 +6,7 @@ import styles from "../../styles/EmptyCartContent.module.css";
 
 const EmptyCartContent = (props) => {
   return (
-    <Fragment className={styles["empty-cart"]}>
+    <div className={styles["empty-cart"]}>
       <h2 className={styles["empty-cart__emoji"]}>
         <span>:</span>/
       </h2>
@@ -21,7 +21,7 @@ const EmptyCartContent = (props) => {
         <AiOutlineClose className={styles["empty-cart__icon"]} />
         Cancel
       </button>
-    </Fragment>
+    </div>
   );
 };
 
