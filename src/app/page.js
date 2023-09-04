@@ -12,10 +12,12 @@ function Home() {
 
   const showCartHandler = () => {
     setCartIsVisible(true);
+    document.body.style.overflow = "hidden";
   };
 
   const hideCartHandler = () => {
     setCartIsVisible(false);
+    document.body.style.overflow = "unset";
   };
 
   return (

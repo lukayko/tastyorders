@@ -72,22 +72,6 @@ const CheckoutForm = (props) => {
     });
   };
 
-  const nameControlCSS = isInputValid.name
-    ? styles.control
-    : styles.control + styles.invalid;
-  const phoneControlCSS = isInputValid.phone
-    ? styles.control
-    : styles.control + styles.invalid;
-  const cityControlCSS = isInputValid.city
-    ? styles.control
-    : styles.control + styles.invalid;
-  const streetControlCSS = isInputValid.street
-    ? styles.control
-    : styles.control + styles.invalid;
-  const postalcodeControlCSS = isInputValid.postalcode
-    ? styles.control
-    : styles.control + styles.invalid;
-
   return (
     <div className={styles.checkout__wrapper}>
       <h2>Contact Information</h2>

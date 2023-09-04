@@ -15,7 +15,13 @@ const HeaderCartButton = (props) => {
   return (
     <button className={styles["cart-button"]} onClick={props.onCartClick}>
       <PiBasket className={styles["cart-button__icon"]} />
-      <span className={styles["cart-button__badge"]}>{numOfCartItems}</span>
+      <span
+        className={`${styles["cart-button__badge"]} ${
+          props.navbarColored ? styles.colored : ""
+        }`}
+      >
+        {numOfCartItems}
+      </span>
     </button>
   );
 };

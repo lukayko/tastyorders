@@ -1,6 +1,6 @@
 "use client";
 
-import { Fragment, useContext, useState } from "react";
+import { useContext, useState } from "react";
 import CartItem from "./CartItem";
 import CheckoutForm from "./CheckoutForm";
 import Modal from "../UI/Modal";
