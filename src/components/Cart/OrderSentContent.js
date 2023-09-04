@@ -1,6 +1,7 @@
 import { MdOutlineFastfood } from "react-icons/md";
 import { AiOutlineClose } from "react-icons/ai";
 import styles from "../../styles/OrderSentContent.module.css";
+import { motion } from "framer-motion";
 
 const OrderSentContent = (props) => {
   return (
@@ -13,13 +14,20 @@ const OrderSentContent = (props) => {
         Your order is in our kitchen. You will have it at your doorstep in no
         time.
       </p>
-      <button
+      <motion.button
         className={styles["order__close-button"]}
         onClick={props.onCloseClick}
+        whileHover={{
+          color: "#f8b602",
+          borderColor: "#f8b602",
+        }}
+        whileTap={{
+          scale: 0.9,
+        }}
       >
         <AiOutlineClose className={styles["order__close-icon"]} />
         Close
-      </button>
+      </motion.button>
     </div>
   );
 };

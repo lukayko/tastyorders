@@ -8,14 +8,14 @@
   margin: 0;
 }
 .order__container span {
-  color: #f8b602;
+  color: rgb(248, 182, 2);
 }
 .order__food-icon {
   width: 6rem;
   height: 6rem;
   text-align: center;
   margin: 0;
-  fill: #f8b602;
+  fill: rgb(248, 182, 2);
 }
 .order__title {
   font-size: 2rem;
@@ -26,12 +26,12 @@
   font: inherit;
   cursor: pointer;
   background-color: transparent;
-  border: 2px solid #333;
+  border: 2px solid rgb(51, 51, 51);
   padding: 0.5rem 1rem;
   border-radius: 0.5rem;
   margin-top: 2rem;
   background-color: transparent;
-  color: #333;
+  color: rgb(51, 51, 51);
   font-weight: bold;
   display: flex;
   align-items: center;
@@ -41,5 +41,5 @@
   width: 1.25rem;
   height: 1.25rem;
   margin-right: 0.3rem;
-  fill: #333;
+  fill: rgb(51, 51, 51);
 }/*# sourceMappingURL=OrderSentContent.module.css.map */

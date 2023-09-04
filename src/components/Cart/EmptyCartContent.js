@@ -2,6 +2,7 @@
 
 import { AiOutlineClose } from "react-icons/ai";
 import styles from "../../styles/EmptyCartContent.module.css";
+import { motion } from "framer-motion";
 
 const EmptyCartContent = (props) => {
   return (
@@ -13,13 +14,19 @@ const EmptyCartContent = (props) => {
       <p className={styles["empty-cart__text"]}>
         Add delicious items from our menu to get started!
       </p>
-      <button
+      <motion.button
         className={styles["empty-cart__button"]}
         onClick={props.onCloseClick}
+        whileHover={{
+          borderColor: "#f8b602",
+        }}
+        whileTap={{
+          scale: 0.9,
+        }}
       >
         <AiOutlineClose className={styles["empty-cart__icon"]} />
         Cancel
-      </button>
+      </motion.button>
     </div>
   );
 };

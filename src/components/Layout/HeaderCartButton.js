@@ -4,6 +4,7 @@ import { useContext } from "react";
 import { PiBasket } from "react-icons/pi";
 import CartContext from "../../store/cart-context";
 import styles from "../../styles/HeaderCartBtn.module.css";
+import { motion } from "framer-motion";
 
 const HeaderCartButton = (props) => {
   const cartCtx = useContext(CartContext);
@@ -13,7 +14,16 @@ const HeaderCartButton = (props) => {
   }, 0);
 
   return (
-    <button className={styles["cart-button"]} onClick={props.onCartClick}>
+    <motion.button
+      className={styles["cart-button"]}
+      onClick={props.onCartClick}
+      whileHover={{
+        scale: 1.1,
+      }}
+      whileTap={{
+        scale: 0.9,
+      }}
+    >
       <PiBasket className={styles["cart-button__icon"]} />
       <span
         className={`${styles["cart-button__badge"]} ${
@@ -22,7 +32,7 @@ const HeaderCartButton = (props) => {
       >
         {numOfCartItems}
       </span>
-    </button>
+    </motion.button>
   );
 };
 

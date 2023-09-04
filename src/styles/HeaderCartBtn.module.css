@@ -16,7 +16,7 @@
 }
 .cart-button__badge {
   position: absolute;
-  background-color: #f8b602;
+  background-color: rgb(248, 182, 2);
   border-radius: 100%;
   width: 1.35rem;
   height: 1.35rem;
@@ -27,8 +27,10 @@
   justify-content: center;
   font-weight: bold;
   color: #fff;
+  transition: background-color 0.2s ease;
 }
 
 .colored {
-  background-color: #333;
+  background-color: rgb(51, 51, 51);
+  transition: background-color 0.2s ease;
 }/*# sourceMappingURL=HeaderCartBtn.module.css.map */

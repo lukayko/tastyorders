@@ -6,8 +6,10 @@ import FoodIMG from "../../../public/images/food.png";
 import { MdFoodBank } from "react-icons/md";
 import Image from "next/image";
 import styles from "../../styles/Header.module.css";
+import { motion, useMotionValueEvent, useScroll } from "framer-motion";
 
 const Header = (props) => {
+  // Set navbarColored to true when the user scrolls down 150px
   const [navbarColored, setNavbarColored] = useState(false);
 
   useEffect(() => {
@@ -26,6 +28,8 @@ const Header = (props) => {
     };
   }, []);
 
+  console.log("Made by LUKAS CERVENKA (2023) - https://lukascervenka.dev");
+
   return (
     <>
       <header
@@ -35,14 +39,13 @@ const Header = (props) => {
           <MdFoodBank className={styles.header__logo} />
           <h1>TastyOrders</h1>
         </div>
-
         <HeaderCartButton
           onCartClick={props.onCartClick}
           navbarColored={navbarColored}
         />
       </header>
       <div className={styles["header__bg-container"]}>
-        <Image src={FoodIMG} alt='Food on table'></Image>
+        <Image src={FoodIMG} priority={true} alt='Food on table'></Image>
       </div>
     </>
   );

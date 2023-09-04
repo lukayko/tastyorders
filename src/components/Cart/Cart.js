@@ -9,6 +9,7 @@ import CartContext from "../../store/cart-context";
 import styles from "../../styles/Cart.module.css";
 import OrderSentContent from "./OrderSentContent";
 import EmptyCartContent from "./EmptyCartContent";
+import { AnimatePresence, motion } from "framer-motion";
 
 const Cart = (props) => {
   const cartCtx = useContext(CartContext);
@@ -73,24 +74,37 @@ const Cart = (props) => {
   const orderButton = (
     <div>
       {cartContainItems && (
-        <button
+        <motion.button
           className={styles["cart__order-button"]}
           onClick={orderClickHandler}
+          whileHover={{
+            backgroundColor: "#333",
+            borderColor: "#333",
+          }}
+          whileTap={{
+            scale: 0.9,
+          }}
         >
           Order
-        </button>
+        </motion.button>
       )}
     </div>
   );
 
   const closeButton = (
-    <button
+    <motion.button
       className={styles["cart__close-button"]}
       onClick={props.onCloseClick}
+      whileHover={{
+        borderColor: "#f8b602",
+      }}
+      whileTap={{
+        scale: 0.9,
+      }}
     >
       <AiOutlineClose className={styles["cart__close-icon"]} />
       Cancel
-    </button>
+    </motion.button>
   );
 
   let modalContent;
@@ -99,48 +113,54 @@ const Cart = (props) => {
     modalContent = <EmptyCartContent onCloseClick={props.onCloseClick} />;
   } else {
     modalContent = (
-      <div
-        className={`styles.cart__wrapper ${
-          isCheckout ? styles.grid__wrapper : ""
-        }`}
-      >
-        {/* child 1*/}
-        <div>
-          <h2 className={styles.cart__summary}>Your order</h2>
-          <ul className={styles.cart__items}>{cartItems}</ul>
-          <div className={styles.cart__additional}>
-            <p className={styles["cart__additional-text"]}>Packaging</p>
-            <p>
-              0.50
-              <span className={styles["cart__total-symbol"]}>€</span>
-            </p>
+      <AnimatePresence>
+        <motion.div
+          className={`styles.cart__wrapper ${
+            isCheckout ? styles.grid__wrapper : ""
+          }`}
+          initial={{ x: -300, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          exit={{ x: -300, opacity: 0 }}
+        >
+          {/* child 1*/}
+          <div>
+            <h2 className={styles.cart__summary}>Your order</h2>
+            <ul className={styles.cart__items}>{cartItems}</ul>
+            <div className={styles.cart__additional}>
+              <p className={styles["cart__additional-text"]}>Packaging</p>
+              <p>
+                0.50
+                <span className={styles["cart__total-symbol"]}>€</span>
+              </p>
+            </div>
+            <div className={styles.cart__additional}>
+              <p className={styles["cart__additional-text"]}>Delivery</p>
+              <p>
+                3.50<span className={styles["cart__total-symbol"]}>€</span>
+              </p>
+            </div>
+            <div className={styles.cart__total}>
+              <span>Total</span>
+              <span>
+                {formattedTotalAmount}
+                <span className={styles["cart__total-symbol"]}>€</span>
+              </span>
+            </div>
+            <div className={styles["cart__button-container"]}>
+              {!isCheckout && closeButton}
+              {!isCheckout && orderButton}
+            </div>
           </div>
-          <div className={styles.cart__additional}>
-            <p className={styles["cart__additional-text"]}>Delivery</p>
-            <p>
-              3.50<span className={styles["cart__total-symbol"]}>€</span>
-            </p>
-          </div>
-          <div className={styles.cart__total}>
-            <span>Total</span>
-            <span>
-              {formattedTotalAmount}
-              <span className={styles["cart__total-symbol"]}>€</span>
-            </span>
-          </div>
-          <div className={styles["cart__button-container"]}>
-            {!isCheckout && closeButton}
-            {!isCheckout && orderButton}
-          </div>
-        </div>
-        {/* child 2*/}
-        {isCheckout && (
-          <CheckoutForm
-            onSubmitForm={submitOrderHandler}
-            onGoBackClick={onGoBackClickHandler}
-          />
-        )}
-      </div>
+          {/* child 2*/}
+          {isCheckout && (
+            <CheckoutForm
+              onSubmitForm={submitOrderHandler}
+              onGoBackClick={onGoBackClickHandler}
+              isVisible={isCheckout}
+            />
+          )}
+        </motion.div>
+      </AnimatePresence>
     );
   }
 

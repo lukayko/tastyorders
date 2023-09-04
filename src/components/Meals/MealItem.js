@@ -4,6 +4,7 @@ import { useState, useContext } from "react";
 import Input from "../UI/Input";
 import CartContext from "../../store/cart-context";
 import styles from "../../styles/MealItem.module.css";
+import { motion } from "framer-motion";
 
 const MealItem = (props) => {
   const [isValid, setIsValid] = useState(true);
@@ -77,9 +78,17 @@ const MealItem = (props) => {
               Please enter valid amount (1 - 10)
             </p>
           )}
-          <button className={styles["meal__form-cart-button"]}>
+          <motion.button
+            className={styles["meal__form-cart-button"]}
+            whileHover={{
+              backgroundColor: "#333",
+            }}
+            whileTap={{
+              scale: 0.9,
+            }}
+          >
             Add to cart
-          </button>
+          </motion.button>
         </form>
       </div>
     </li>

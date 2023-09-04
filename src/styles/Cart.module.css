@@ -23,7 +23,7 @@
 }
 .cart__summary {
   margin: 0;
-  color: #f8b602;
+  color: rgb(248, 182, 2);
 }
 .cart__total {
   display: flex;
@@ -34,7 +34,7 @@
   margin: 1rem 0;
 }
 .cart__total-symbol {
-  color: #f8b602;
+  color: rgb(248, 182, 2);
 }
 .cart__additional {
   font-size: 0.8rem;
@@ -45,7 +45,7 @@
   margin-bottom: -1rem;
 }
 .cart__additional span {
-  color: #f8b602;
+  color: rgb(248, 182, 2);
   font-weight: bold;
 }
 .cart__additional p {
@@ -63,8 +63,8 @@
 .cart__order-button {
   font: inherit;
   cursor: pointer;
-  background-color: #f8b602;
-  border: 1px solid #f8b602;
+  background-color: rgb(248, 182, 2);
+  border: 1px solid rgb(248, 182, 2);
   padding: 0.5rem 1rem;
   border-radius: 0.5rem;
   color: #fff;
@@ -77,11 +77,11 @@
   font: inherit;
   cursor: pointer;
   background-color: transparent;
-  border: 2px solid #333;
+  border: 2px solid rgb(51, 51, 51);
   padding: 0.5rem 1rem;
   border-radius: 0.5rem;
   background-color: transparent;
-  color: #333;
+  color: rgb(51, 51, 51);
   font-weight: bold;
   display: flex;
   align-items: center;
@@ -92,5 +92,5 @@
   width: 1.25rem;
   height: 1.25rem;
   margin-right: 0.3rem;
-  fill: #333;
+  fill: rgb(51, 51, 51);
 }/*# sourceMappingURL=Cart.module.css.map */

@@ -30,9 +30,11 @@
     justify-content: center;
     font-weight: bold;
     color: $secondaryFontColor;
+    transition: background-color 0.2s ease;
   }
 }
 
 .colored {
   background-color: $primaryFontColor;
+  transition: background-color 0.2s ease;
 }
