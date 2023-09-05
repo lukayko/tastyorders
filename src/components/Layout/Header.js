@@ -1,3 +1,5 @@
+"use client";
+
 import { useState, useEffect } from "react";
 import HeaderCartButton from "./HeaderCartButton";
 import FoodIMG from "../../../public/images/food.png";
