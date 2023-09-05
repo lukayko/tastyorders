@@ -45,7 +45,7 @@ const Header = (props) => {
         />
       </header>
       <div className={styles["header__bg-container"]}>
-        <Image src={FoodIMG} priority={true} alt='Food on table'></Image>
+        <Image src={FoodIMG} priority={true} quality={80} alt='Food on table' />
       </div>
     </>
   );
