@@ -4,7 +4,7 @@ A fictional food delivery webapp built with Next.js and React. User can browse t
 
 ## See the live project
 
-You can checkout the live project [HERE](https://64e7a820f4e89b04f81127ce--iridescent-snickerdoodle-087582.netlify.app/)
+You can checkout the live project [HERE](tastyorders.netlify.app)
 
 ## Technologies used in this project
 
