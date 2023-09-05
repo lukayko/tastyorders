@@ -9,9 +9,11 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@netlify/ipx": "^1.4.4",
     "eslint": "8.48.0",
     "eslint-config-next": "13.4.19",
     "framer-motion": "^10.16.3",
+    "netlify-plugin-ipx": "^0.0.1",
     "next": "13.4.19",
     "react": "18.2.0",
     "react-dom": "18.2.0",
