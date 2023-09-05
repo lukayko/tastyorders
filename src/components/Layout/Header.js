@@ -2,9 +2,7 @@
 
 import { useState, useEffect } from "react";
 import HeaderCartButton from "./HeaderCartButton";
-import FoodIMG from "../../../public/images/food.png";
 import { MdFoodBank } from "react-icons/md";
-import Image from "next/image";
 import styles from "../../styles/Header.module.css";
 import Link from "next/link";
 
@@ -47,7 +45,7 @@ const Header = (props) => {
         />
       </header>
       <div className={styles["header__bg-container"]}>
-        <Image src={FoodIMG} priority={true} quality={80} alt='Food on table' />
+        <img src='/images/food.png' alt='Food on table' />
       </div>
     </>
   );
