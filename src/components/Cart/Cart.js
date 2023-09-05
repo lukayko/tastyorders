@@ -1,5 +1,3 @@
-"use client";
-
 import { useContext, useState } from "react";
 import CartItem from "./CartItem";
 import CheckoutForm from "./CheckoutForm";
@@ -123,33 +121,37 @@ const Cart = (props) => {
           exit={{ x: -300, opacity: 0 }}
         >
           {/* child 1*/}
-          <div>
+          <div className={styles["cart__left-container"]}>
             <h2 className={styles.cart__summary}>Your order</h2>
             <ul className={styles.cart__items}>{cartItems}</ul>
-            <div className={styles.cart__additional}>
-              <p className={styles["cart__additional-text"]}>Packaging</p>
-              <p>
-                0.50
-                <span className={styles["cart__total-symbol"]}>€</span>
-              </p>
+            <div>
+              <div className={styles.cart__additional}>
+                <p className={styles["cart__additional-text"]}>Packaging</p>
+                <p>
+                  0.50
+                  <span className={styles["cart__total-symbol"]}>€</span>
+                </p>
+              </div>
+              <div className={styles.cart__additional}>
+                <p className={styles["cart__additional-text"]}>Delivery</p>
+                <p>
+                  3.50<span className={styles["cart__total-symbol"]}>€</span>
+                </p>
+              </div>
+              <div className={styles.cart__total}>
+                <span>Total</span>
+                <span>
+                  {formattedTotalAmount}
+                  <span className={styles["cart__total-symbol"]}>€</span>
+                </span>
+              </div>
             </div>
-            <div className={styles.cart__additional}>
-              <p className={styles["cart__additional-text"]}>Delivery</p>
-              <p>
-                3.50<span className={styles["cart__total-symbol"]}>€</span>
-              </p>
-            </div>
-            <div className={styles.cart__total}>
-              <span>Total</span>
-              <span>
-                {formattedTotalAmount}
-                <span className={styles["cart__total-symbol"]}>€</span>
-              </span>
-            </div>
-            <div className={styles["cart__button-container"]}>
-              {!isCheckout && closeButton}
-              {!isCheckout && orderButton}
-            </div>
+            {!isCheckout && (
+              <div className={styles["cart__button-container"]}>
+                {closeButton}
+                {orderButton}
+              </div>
+            )}
           </div>
           {/* child 2*/}
           {isCheckout && (

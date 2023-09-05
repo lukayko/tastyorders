@@ -1,5 +1,3 @@
-"use client";
-
 import styles from "../../styles/MealsSummary.module.css";
 import { motion } from "framer-motion";
 

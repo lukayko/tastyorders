@@ -1,12 +1,10 @@
-"use client";
-
 import { useState, useEffect } from "react";
 import HeaderCartButton from "./HeaderCartButton";
 import FoodIMG from "../../../public/images/food.png";
 import { MdFoodBank } from "react-icons/md";
 import Image from "next/image";
 import styles from "../../styles/Header.module.css";
-import { motion, useMotionValueEvent, useScroll } from "framer-motion";
+import Link from "next/link";
 
 const Header = (props) => {
   // Set navbarColored to true when the user scrolls down 150px
@@ -28,17 +26,19 @@ const Header = (props) => {
     };
   }, []);
 
-  console.log("Made by LUKAS CERVENKA (2023) - https://lukascervenka.dev");
+  useEffect(() => {
+    console.log("Made by LUKAS CERVENKA (2023) - https://lukascervenka.dev");
+  }, []);
 
   return (
     <>
       <header
         className={`${styles.header} ${navbarColored ? styles.colored : ""}`}
       >
-        <div className={styles["header__logo-container"]}>
+        <Link href='/' className={styles["header__logo-container"]}>
           <MdFoodBank className={styles.header__logo} />
           <h1>TastyOrders</h1>
-        </div>
+        </Link>
         <HeaderCartButton
           onCartClick={props.onCartClick}
           navbarColored={navbarColored}

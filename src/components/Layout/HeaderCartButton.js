@@ -1,5 +1,3 @@
-"use client";
-
 import { useContext } from "react";
 import { PiBasket } from "react-icons/pi";
 import CartContext from "../../store/cart-context";

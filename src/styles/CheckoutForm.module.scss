@@ -4,12 +4,19 @@
   &__wrapper {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
     width: 100%;
 
     h2 {
       margin: 0 0 1rem 0;
       color: $primaryColor;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
     }
   }
 

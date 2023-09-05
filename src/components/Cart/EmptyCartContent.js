@@ -1,5 +1,3 @@
-"use client";
-
 import { AiOutlineClose } from "react-icons/ai";
 import styles from "../../styles/EmptyCartContent.module.css";
 import { motion } from "framer-motion";

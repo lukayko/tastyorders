@@ -18,7 +18,6 @@ const OrderSentContent = (props) => {
         className={styles["order__close-button"]}
         onClick={props.onCloseClick}
         whileHover={{
-          color: "#f8b602",
           borderColor: "#f8b602",
         }}
         whileTap={{

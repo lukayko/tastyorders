@@ -16,13 +16,21 @@
     width: 100%;
   }
 
-  &__items {
+  &__left-container {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     width: 100%;
+  }
+
+  &__items {
+    margin-bottom: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
     padding-left: 0;
-    max-height: 40vh;
+    height: clamp(20vh, auto, 50vh);
     overflow: auto;
   }
 
@@ -37,7 +45,7 @@
     align-items: center;
     font-weight: bold;
     font-size: 1.2rem;
-    margin: 1rem 0;
+    margin: 1rem 0 0 0;
 
     &-symbol {
       color: $primaryColor;
